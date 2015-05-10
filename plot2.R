@@ -27,3 +27,13 @@ dev.copy(png, file="E:/R-datasets/plot2.png")
 
 # close the PNG graphics device
 dev.off()
+
+# converting date field to weekdays by factor and setting the range of days for plotting
+powerday = factor(weekdays(power_subset$Date), levels = c('Thursday','Friday','Saturday'),ordered=TRUE)
+plot(powerday, power_subset$Global_active_power, type="l", ylab="Global Active Power (kilowatts)")
+
+# Copy my plot to a PNG file
+dev.copy(png, file="E:/R-datasets/plot2.png")
+
+# close the PNG graphics device
+dev.off()
